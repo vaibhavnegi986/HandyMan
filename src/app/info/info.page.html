@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <small>
+        {{'common.latest-info' | translate}}
+    </small>
+  </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="red" no-padding>
+    <ion-row no-padding>
+      <ion-col size="12" *ngFor="let i of infos" size-sm="4" offset-sm="4" no-padding>
+        <ion-card>
+
+          <!-- <ion-card-header color="tertiary"> -->
+            <ion-item lines="none">
+              <!-- <a [href]="'info.'+i+'.link'| translate">click </a> -->
+                <ion-text color="dark">
+                  <b >
+                  {{'info.'+i+'.title'| translate}}
+                  </b>
+                </ion-text>
+                
+              </ion-item>
+              <!-- </ion-card-header> -->
+              <ion-card-content text-left no-padding>
+                <ion-button margin-horizontal margin-bottom color="tertiary" size="small" [routerLink]="['/tabs/info', i]">{{'common.view-more' | translate}}<ion-icon name="md-arrow-dropright" ></ion-icon></ion-button>
+              <!-- <ion-label (click)="onShow(i)" ><p  [innerHTML]="'info.'+i+'.description' | translate"></p></ion-label> -->
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

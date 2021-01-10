@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-searchbar [placeholder]="'post.search' | translate"></ion-searchbar>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="red" text-center>
+    <ion-text >{{'title' | translate}}</ion-text>
+
+  </div> -->
+  <ion-grid class="red" no-padding>
+    <div *ngIf="error && !isLoading" margin text-center>
+      <ion-text color="danger">
+        {{ 'common.error'| translate}}
+      </ion-text>
+      <div>
+        <div margin>
+          <h1>
+            <ion-icon color="danger" name="md-alert"></ion-icon>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- <div *ngIf="isLoading && !error" padding margin text-center>
+      <ion-spinner color="primary"></ion-spinner>
+    </div> -->
+    <ion-row *ngIf="isLoading && !error" no-padding>
+      <ion-col size-sm="4" offset-sm="4" no-padding>
+        <ion-card *ngFor="let post of [0,1,2]">
+          <ion-card-header >
+            <ion-item lines="none" no-padding>
+              <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+              </ion-avatar>
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated width="60%"></ion-skeleton-text>
+                </h3>
+                <ion-text>
+                  <ion-skeleton-text animated width="40%"></ion-skeleton-text>
+                </ion-text>
+
+              </ion-label>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content no-padding>
+            <ion-skeleton-text animated class="load-img"></ion-skeleton-text>
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col size="12" no-padding>
+                  <div padding>
+                    <ion-label padding-bottom>
+                      <h4>
+                        <ion-skeleton-text animated width="80%"></ion-skeleton-text>
+                      </h4>
+                    </ion-label>
+                    <ion-skeleton-text animated width="20%"></ion-skeleton-text>
+                  </div>
+
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6" no-padding>
+                  <ion-skeleton-text animated class="load-btn"></ion-skeleton-text>
+                </ion-col>
+                <ion-col size="6" no-padding>
+                  <ion-skeleton-text animated class="load-btn"></ion-skeleton-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!isLoading && !error" no-padding>
+      <ion-col size-sm="4" offset-sm="4" no-padding>
+        <ion-card *ngFor="let post of posts">
+          <ion-card-header id="light">
+            <ion-item lines="none" no-padding>
+              <ion-avatar slot="start">
+                <img [src]="post.profilePic" *ngIf="post.profilePic">
+                <img src="../../assets/images/blank.png" *ngIf="!post.profilePic">
+              </ion-avatar>
+              <ion-label class="light">
+                <h3>{{post.creator.name}}</h3>
+                <ion-text><small>{{post.createdAt | date:'medium'}} <ion-icon color="tertiary" name="md-calendar"
+                      slot="only"></ion-icon></small></ion-text>
+
+              </ion-label>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content no-padding>
+            <ion-img [src]="post.image"> </ion-img>
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col size="12" no-padding>
+                  <div padding>
+                    <ion-label>
+                      <h4>{{post.description}}</h4>
+                    </ion-label>
+                  </div>
+                  <ion-item>
+                    <h3>
+                      <ion-text color="primary"> <b>
+                          <ion-icon name="md-thumbs-up"></ion-icon>
+                        </b>
+                        : {{(post.likes && post.newLike) ? post.likes : ((post.likes && !post.newLike)? post.likes :  'be the first to like')}}</ion-text>
+
+                    </h3>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6" no-padding>
+                  <ion-button (click)="like(post._id,post)" expand="block">{{'post.like' | translate}}</ion-button>
+                </ion-col>
+                <ion-col size="6" no-padding>
+                  <ion-button color="success" expand="block">{{'post.share' | translate}}</ion-button>
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+      <!-- <ion-col size-sm="5" offset-sm="2" no-padding>
+        <ion-card>
+          <ion-card-header >
+            <ion-item lines="none" no-padding>
+              <ion-avatar slot="start">
+                <img src="https://cdn.pixabay.com/photo/2018/03/16/18/43/portrait-3232162__340.jpg">
+              </ion-avatar>
+              <ion-label>
+                <h3>Rahul Thakur</h3>
+                <ion-text><small>15 hours</small></ion-text>
+
+              </ion-label>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content no-padding>
+            <ion-img src="https://cdn.pixabay.com/photo/2017/06/14/12/27/hiring-2402042__340.jpg"> </ion-img>
+            <ion-grid no-padding>
+              <ion-row>
+                <ion-col size="12" no-padding>
+                  <ion-item>
+                    <h3>
+                      <ion-text color="primary">  <b><ion-icon  name="md-thumbs-up"></ion-icon></b>: 19</ion-text>
+
+                    </h3>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6" no-padding>
+                  <ion-button  expand="block">Like</ion-button>
+                </ion-col>
+                <ion-col size="6" no-padding>
+                  <ion-button color="success" expand="block">Share</ion-button>
+
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col> -->
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

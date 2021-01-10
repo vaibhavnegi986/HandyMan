@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+<ion-grid no-padding>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3" no-padding>
+      <ion-card margin-horizontal>
+        <ion-card-header color="tertiary">
+          <ion-text><h2>{{'common.signup' | translate}}</h2></ion-text>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+              <ion-label for="name"  position="floating">{{ 'common.enter-name' | translate}}</ion-label>
+              <ion-input formControlName="name" name="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label for="phone" position="floating">{{ 'common.enter-ph' | translate}}</ion-label>
+              <ion-input formControlName="phoneNo" name="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label for="password" position="floating">{{ 'common.enter-pass' | translate}}</ion-label>
+              <ion-input type="password" formControlName="password" name="password"></ion-input>
+            </ion-item>
+            <div margin text-center>
+              <ion-button (click)="login()" margin color="tertiary">{{'common.signup' | translate}}</ion-button>
+            </div>
+                    
+      </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</form>
+
+

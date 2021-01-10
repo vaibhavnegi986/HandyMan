@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{!login? '': 'common.signup' | translate}}{{login ? '': 'common.login' | translate}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/tabs/posts"><ion-icon name="home"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-vertical>
+    <div *ngIf="isLoggedIn" margin text-center>
+      <ion-button margin color="tertiary" (click)="logout()">logout</ion-button>
+    </div>
+ 
+  <app-login *ngIf="login && !isLoggedIn"></app-login>
+  <app-sign-up *ngIf="!login && !isLoggedIn"></app-sign-up>
+  <div *ngIf="!isLoggedIn && !isLoggedIn" margin text-center>
+    <ion-button (click)="toggle()"  color="tertiary" fill="outline"><b>{{login? '': 'common.sign-up' | translate}}{{!login ? '': 'common.log-in' | translate}}</b></ion-button>
+  </div>
+
+</ion-content>

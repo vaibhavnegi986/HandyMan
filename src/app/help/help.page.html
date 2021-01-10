@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{'title' | translate}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/"><ion-icon name="home"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="red" no-padding>
+    <ion-row no-padding>
+      <ion-col size-sm="4" offset-sm="4" no-padding>
+        <ion-card>
+          <ion-card-header text-center color="dark" >
+            <div  lines="none">
+              <ion-label  >
+                <h1>{{ 'help.0.title' | translate}}</h1>
+
+              </ion-label>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text color="dark" margin text-center>
+              <p>
+                {{'help.0.body' | translate}}
+
+              </p>
+            </ion-text>
+            <div margin *ngFor="let i of helps" lines="none" no-padding>
+              <ion-label>
+                <ion-text color="dark">
+  
+                  <h1>{{ 'help.'+i+'.title' | translate}}</h1>
+                </ion-text>
+                <ion-text color="dark">
+                  <h4>{{'help.'+i+'.body' | translate}}</h4> 
+                </ion-text>
+  
+              </ion-label>
+            </div>
+          </ion-card-content>
+
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

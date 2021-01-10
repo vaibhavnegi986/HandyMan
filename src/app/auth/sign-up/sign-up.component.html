@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+  <ion-grid no-padding>
+    <ion-row>
+        <ion-col *ngIf="!isLoggedIn" size-sm="6" offset-sm="3" no-padding>
+        <ion-card margin-horizontal>
+          <ion-card-header color="tertiary">
+            <ion-text><h2>{{ 'common.login' | translate}}</h2></ion-text>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-item>
+                <ion-label for="phone" position="floating">{{ 'common.enter-ph' | translate}}</ion-label>
+                <ion-input formControlName="phoneNo" name="phone"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label for="password" position="floating">{{ 'common.enter-pass' | translate}}</ion-label>
+                <ion-input type="password" formControlName="password" name="password"></ion-input>
+              </ion-item>
+              <div margin text-center>
+                <ion-button (click)="signup()" margin color="tertiary">{{ 'common.login' | translate}}</ion-button>
+              </div>
+                      
+        </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </form>
+  
+  
+  

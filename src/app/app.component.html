@@ -1,3 +1,24 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+        
+        <ion-list>
+          <ion-item routerLink="/tabs/posts"><ion-icon name="globe" slot="start"></ion-icon>{{'common.home' | translate}}</ion-item>
+          <ion-item routerLink="/profile"><ion-icon name="person" slot="start"></ion-icon>{{'common.profile' | translate}}</ion-item>
+          <ion-item routerLink="/help"><ion-icon name="help-circle" slot="start"></ion-icon>{{'common.help' | translate}}</ion-item>
+          <ion-item (click)="openLang()" ><ion-icon name="paper" slot="start"></ion-icon>{{'common.language' | translate}}</ion-item>
+          <ion-item routerLink="/auth"><ion-icon name="logo-ionic" slot="start"></ion-icon>{{'common.login/logout' | translate}}</ion-item>
+          <!-- <ion-item><ion-icon name="options" slot="start"></ion-icon>{{'common.settings' | translate}}</ion-item> -->
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>

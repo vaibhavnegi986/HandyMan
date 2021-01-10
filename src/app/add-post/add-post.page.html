@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>add-post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment>
+    <ion-segment-button (click)="choose('New Job')"  [checked]="!isPost" value="New Job">
+      <ion-label>ad(buy,sell,rent)</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="choose('Post')" value="post" [checked]="isPost">
+      <ion-label>Posts</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf="isLoaded">
+    <app-post *ngIf="isPost"></app-post>
+    <app-ad *ngIf="!isPost"></app-ad>
+
+  </div>
+
+</ion-content>

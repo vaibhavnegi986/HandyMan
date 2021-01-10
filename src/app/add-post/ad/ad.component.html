@@ -1,0 +1,46 @@
+<ion-grid no-padding margin>
+  <ion-row>
+    <ion-col size-sm="6" offset-sm="3" no-padding>
+      <ion-card>
+        <ion-card-content>
+          <div padding text-center>
+            <ion-card no-padding no-margin>
+
+              <ion-button (click)="share('sell')" color="success" expand="block" size="large" no-margin>
+              <ion-icon name="image"></ion-icon>
+              <h1></h1>
+                Sell
+              </ion-button>
+            </ion-card>
+          </div>
+          <div padding text-center>
+            <ion-card no-padding no-margin>
+
+              <ion-button (click)="share('rent')" color="tertiary" expand="block" size="large" no-margin>
+              <ion-icon name="image"></ion-icon>
+              <h1></h1>
+                Rent 
+              </ion-button>
+            </ion-card>
+          </div>
+          <div padding text-center>
+            <ion-card no-padding no-margin>
+
+              <ion-button (click)="share('hire')" color="warning" expand="block" size="large" no-margin>
+              <ion-icon name="image"></ion-icon>
+              <h1></h1>
+                hire 
+              </ion-button>
+            </ion-card>
+          </div>
+          <div padding>
+            <ion-item>
+
+              <ion-label text-center ><h2 >Select what you want to share ?</h2></ion-label>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,35 @@
+@media screen and (min-width: 480px) {
+
+//   .red{
+//     background:var(--ion-color-warning)
+// }
+
+
+// ion-card, ion-card-content{
+//     background-color: white;
+
+// }
+
+    ion-searchbar{
+        margin: auto;
+        width:50%;
+        }
+  }
+ion-searchbar{
+width:100%;
+}
+
+#light{
+  border-bottom: 1px solid var(--ion-color-tertiary);
+}
+
+.load-img{
+  height: 12rem;
+}
+.load-btn{
+  height: 2.5rem;
+  width:97%;
+  margin:auto;
+  border-radius: 5px;
+  padding: 5px;
+}

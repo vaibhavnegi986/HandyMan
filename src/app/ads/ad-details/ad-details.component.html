@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>{{'common.advertisement' | translate}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div margin text-center>
+    <ion-spinner *ngIf="isLoading" color="primary" ></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size-sm="6" offset-sm=3>
+        <ion-card no-padding>
+          <img [src]="ad.imageUrl">
+          <ion-card-content>
+            <ion-item>
+              <ion-text>
+                {{'ads.description' | translate}}:
+              </ion-text>
+              <ion-label><b>{{ad.description}}</b></ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-text>
+                {{'ads.location' | translate}}:
+              </ion-text>
+              <ion-label><b>{{ad.location}}</b></ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-text>
+                {{ 'ads.price' | translate}}:
+              </ion-text>
+              <ion-label><b>{{ad.price}}</b></ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-text>
+                {{ 'common.name'| translate}}:
+              </ion-text>
+              <ion-label><b>{{ad.creator.name}}</b></ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-text>
+
+              </ion-text>
+              <ion-label><b>{{ad.creator.phoneNo}}</b></ion-label>
+            </ion-item>
+            <ion-item>
+              <a target="_blank" href="{{'https://wa.me/+91' + ad.creator.phoneNo + '/'}}"><ion-button color="success" >whatsapp<ion-icon name="logo-whatsapp"></ion-icon></ion-button></a>
+              <ion-text color="danger">
+                <small>*if you have whatsapp</small>
+
+              </ion-text>
+            </ion-item>
+
+          </ion-card-content>
+
+        </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

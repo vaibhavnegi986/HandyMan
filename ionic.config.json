@@ -1,5 +1,7 @@
 {
   "name": "saksham-kisaan",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

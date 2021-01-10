@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ 'common.profile' | translate}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/"><ion-icon name="home"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-vertical>
+  <ion-grid *ngIf="isLoading" no-padding>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" >
+        <ion-card>
+          <ion-item>
+            <ion-label>{{'common.name' | translate}} </ion-label>
+            <ion-skeleton-text animated width="30%"></ion-skeleton-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{'common.ph' | translate}}</ion-label>
+            <ion-skeleton-text animated width="40%"></ion-skeleton-text>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{'common.your-ads' | translate}}:   </ion-label>
+            <ion-skeleton-text animated width="10%"></ion-skeleton-text>
+              <ion-button fill="clear"><small>show</small></ion-button>
+          </ion-item>        <ion-item>
+            <ion-label>{{'common.your-posts' | translate}}: </ion-label>
+            <ion-skeleton-text animated width="10%"></ion-skeleton-text>
+              <ion-button fill='clear'><small>show</small></ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!isLoading"  no-padding>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" >
+        <ion-card>
+          <ion-item>
+            <ion-label>{{'common.name' | translate}}</ion-label>
+            <h4>{{user.name | titlecase}}</h4>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{'common.ph' | translate}}</ion-label>
+            <h4>{{ user.phoneNo}}</h4>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{'common.your-ads' | translate}}: </ion-label>
+            {{user.ads.length}}
+              <ion-button fill='clear'><small>show</small></ion-button>
+          </ion-item>        <ion-item>
+            <ion-label>{{'common.your-posts' | translate}} </ion-label>
+            {{user.posts.length}}
+
+              <ion-button fill="clear"><small>show</small></ion-button>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-list>
+            <ion-list-header>
+              <ion-text>{{ 'common.your-ads' | translate}}</ion-text>
+            </ion-list-header>
+            <ion-item color="primary" *ngIf="user.ads.length <= 0 ">
+              <ion-text>no advertisements</ion-text>
+            </ion-item>
+            <ion-item lines="none" *ngFor="let ad of user.ads">
+              <ion-avatar slot="start">
+                <ion-img [src]="ad.ad.imageUrl"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <small>{{ad.ad.createdAt| date:'medium' }}</small><ion-icon name="md-calendar" color="tertiary" slot="only"></ion-icon>
+                <p>
+                  {{ad.ad.description }}
+                </p>
+              </ion-label>
+              
+            </ion-item>
+
+          </ion-list>
+         
+        </ion-card>
+        <ion-card>
+          <ion-list>
+            <ion-list-header>
+              <ion-text>{{'common.your-posts' | translate}}</ion-text>
+            </ion-list-header>
+            <ion-item color="primary" *ngIf="user.posts.length <= 0 ">
+              <ion-text>no advertisements</ion-text>
+            </ion-item>
+            <ion-item lines="none" *ngFor="let post of user.posts">
+              <ion-thumbnail slot="start">
+                <ion-img *ngIf="post.post.imageUrl" [src]="ad.image"></ion-img>
+                <ion-img *ngIf="!post.post.imageUrl" src="../../assets/images/text.png"></ion-img>
+              </ion-thumbnail>
+              <ion-label>
+                <small>{{ post.post.createdAt | date:'medium'}}</small><ion-icon name="md-calendar" color="tertiary" slot="only"></ion-icon>
+                <h5>{{post.post.description}}</h5>
+              </ion-label>
+            </ion-item>
+
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

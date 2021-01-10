@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{'common.advertisement' | translate}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [placeholder]="'post.search' | translate"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="red" no-padding>
+    <div *ngIf="error && !isLoading" margin text-center>
+      <ion-text color="danger">
+        {{ 'common.error'| translate}}
+      </ion-text>
+      <div>
+      <div margin>
+        <h1>
+          <ion-icon color="danger" name="md-alert"></ion-icon>
+        </h1>
+      </div>
+      </div>
+    </div>
+    
+    <!-- <div  *ngIf="isLoading and !erro" padding margin text-center>
+      <ion-spinner color="primary"></ion-spinner>
+    </div> -->
+
+    <ion-row *ngIf="isLoading && !error" no-padding>
+      <ion-col  *ngFor="let ad of [0,1,2]" size="12" size-sm="4" offset-sm="4" no-padding>
+        <ion-card>
+          <ion-fab  vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button color="tertiary" size="small">
+              <ion-icon name="open"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+
+
+          <ion-card-content no-padding>
+            <ion-skeleton-text animated class="load-ad-img"></ion-skeleton-text>
+            <ion-grid no-padding>
+              <ion-row>
+
+                <ion-col size="12">
+                  <ion-item no-margin>
+                    <ion-label><ion-skeleton-text  animated width="70%" ></ion-skeleton-text></ion-label>
+                    <ion-skeleton-text class="height-2x" animated width="16%"></ion-skeleton-text>
+                  </ion-item>
+                  <ion-item no-padding-vertical>
+                    <ion-skeleton-text animated width="50%" ></ion-skeleton-text>
+                  </ion-item>
+                  <ion-item no-padding-vertical>
+                    <ion-label>
+                      <ion-skeleton-text animated width="60%" ></ion-skeleton-text>
+                    </ion-label>
+
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+
+      <!-- static -->
+
+    </ion-row>
+    
+    <ion-row *ngIf="!isLoading && !error" no-padding>
+      <ion-col  *ngFor="let ad of ads" size="12" size-sm="4" offset-sm="4" no-padding>
+        <ion-card>
+          <ion-fab  vertical="top" horizontal="end" slot="fixed">
+            <ion-fab-button (click)="call(ad._id)" color="tertiary" size="small">
+              <ion-icon name="open"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+
+
+          <ion-card-content no-padding>
+            <img [src]="ad.imageUrl">
+            <ion-grid no-padding>
+              <ion-row>
+
+                <ion-col size="12">
+                  <ion-item>
+                    <ion-label><b>{{ 'ads.price' | translate}}:</b> ₹ {{ad.price}}/-</ion-label>
+                    <ion-text color="tertiary"><b>{{ad.type}}</b></ion-text>
+                  </ion-item>
+                  <ion-item no-padding-vertical>
+                    <h6><b>{{'ads.location' | translate}}:</b> {{ad.location}} </h6>
+
+                  </ion-item>
+                  <ion-item no-padding-vertical>
+                    <ion-label>
+                      <h4><b>&nbsp;{{'ads.info' | translate}}:</b>{{ad.description}}.</h4>
+                    </ion-label>
+
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+
+      <!-- static -->
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

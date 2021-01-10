@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguagePage } from './settings/language/language.page';
+import { LanguageComponent } from './shared/language/language.component';
+import { Capacitor, Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +17,28 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private translate: TranslateService,
+    private modalCtrl : ModalController
   ) {
     this.initializeApp();
+    translate.setDefaultLang('en');
+
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      if(Capacitor.isPluginAvailable("SplashScreen"))
+      {
+        Plugins.SplashScreen.hide()
+      }
     });
+  }
+  openLang(){
+    this.modalCtrl.create({component:LanguageComponent})
+      .then(modalEl=>{
+        modalEl.present()
+      })
   }
 }

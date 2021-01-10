@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-text>Add Post <small>{{isImage ? '(image)' : '(text)'}}</small> </ion-text>
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form">
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3" no-padding>
+        <ion-card>
+          <ion-card-header color="secondary" text-center>
+            <ion-text><h4>Share your post</h4></ion-text>
+          </ion-card-header>
+
+            <ion-card-content margin>
+
+            
+              <app-image-picker *ngIf="isImage" [showPreview]="form.get('image').value" (imagePick)=onPickImage($event) ></app-image-picker>
+                <ion-item>
+                  <ion-label for="description" position="floating">
+                    Enter caption or description
+                  </ion-label>
+                  <ion-textarea formControlName="description" rows="2" name="description" type="text"></ion-textarea>
+        
+                </ion-item>
+                <div text-center padding>
+                  <ion-button (click)="onCreate()" color="primary">share your post</ion-button>
+                </div>
+            </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+
+</ion-content>
+

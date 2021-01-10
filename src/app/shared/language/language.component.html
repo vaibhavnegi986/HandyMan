@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'common.select-lang' | translate}}:</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon> </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content margin>
+  <ion-grid>
+    <ion-row>
+      <ion-col margin>
+        <ion-card padding>
+          <ion-card-header text-center>
+              <ion-text><h2>{{ 'common.chng-lang' | translate}}:</h2></ion-text>
+          </ion-card-header>
+          <ion-list>
+            <ion-button (click)="changeLang('en')" shape="round" size="large" color="tertiary" expand="block">English</ion-button>
+            <ion-button (click)="changeLang('hindi')" shape="round" size="large" color="dark" expand="block"><b> हिंदी</b><small>&nbsp;(hindi)</small></ion-button>
+            <ion-button (click)="changeLang('punjabi')" shape="round" size="large" color="tertiary" expand="block"><b>ਪੰਜਾਬੀ</b><small>&nbsp;(punjabi)</small></ion-button>
+            <ion-button (click)="changeLang('tamil')" shape="round" size="large" color="dark" expand="block"><b> தமிழ்</b><small>&nbsp;(tamil)</small></ion-button>
+            <ion-button (click)="changeLang('malayalam')" shape="round" size="large" color="tertiary" expand="block"><b>മലയാളം</b><small>&nbsp;(malayalam)</small></ion-button>
+          </ion-list>
+
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
