@@ -1,0 +1,132 @@
+{
+    "title":"सक्षम किसान",
+    "posts":"पोस्ट्स ",
+    "common":{
+        "error":"आप इंटरनेट या सर्वर त्रुटि के साथ जुड़े नहीं हैं।.!",
+        "view-more":"और देखो",
+        "site":"साइट",
+        "posts":"पोस्ट्स / होम",
+        "add-post":"ऐड  पोस्ट्स",
+        "latest-info":"नवीनतम जानकारी",
+        "advertisement":"विज्ञापन  देखे",
+        "home": "होम",
+        "profile":"प्रोफ़ाइल",
+        "language":"भाषा (Language)",
+        "login/logout":"लॉगिन / लॉगआउट",
+        "settings":"सेटिंग्स ",
+        "help":"सहायता",
+        "start-menu":"स्टार्ट मेन्यू (menu)",
+        "sign-up":"साइन अप करें",
+        "log-in":"लॉग इन करें",
+        "login":"लॉग इन",
+        "signup":"साइन अप",
+        "name":"आपका नाम",
+        "ph":"आपका फोन नंबर",
+        "your-ads":"आपके विज्ञापन",
+        "your-posts":"आपके पोस्ट्स",
+        "enter-name":"यहां नाम दर्ज करें",
+        "enter-ph":"फोन नंबर दर्ज करें",
+        "enter-pass":"पास वर्ड अपना दर्ज करें",
+        "chng-lang":"भाषा बदलो",
+        "select-lang":"भाषा का चयन करें :"       
+        
+
+
+    },
+    "post":{
+        "like":"लाइक",
+        "share":"शेयर ",
+        "search":"यहाँ खोजें"
+    },
+    "ads":{
+        "price":"कीमत",
+        "info":"जानकारी",
+        "location":"स्थान / स्थिति",
+        "description":"विवरण"
+    },
+    "help":[
+        {
+         "title":"सहायता ",
+          "body":"ऐप निम्नलिखित सुविधाओं को प्रदान करता है :"
+        },
+        {
+         "title":"होम",
+          "body":"यह ऐप की मुख्य स्क्रीन है और यह लोगों द्वारा पोस्ट की गई खेती से संबंधित विभिन्न पोस्ट दिखाता है। आप पोस्ट को पसंद कर सकते हैं और उन्हें अन्य ऐप पर भी साझा कर सकते हैं।"
+        },
+        {
+         "title":"विज्ञापन",
+          "body":"आप विभिन्न उपयोगकर्ताओं द्वारा पोस्ट किए गए विज्ञापनों को लागत और उसके स्थान के साथ किसी भी उत्पाद को बेचने या किराए पर देने से संबंधित देख सकते हैं। उपयोगकर्ता उत्पादों को खरीद सकते हैं और साथ ही साथ अपने खेतों पर काम करने के लिए उनकी प्रोफ़ाइल देखकर और उनसे संपर्क करके उन्हें काम पर रख सकते हैं।"
+        },
+        {
+         "title":"पोस्ट ",
+          "body":"इस खंड में दो विकल्प उपलब्ध हैं। आप या तो किसी विशेष उत्पाद को खरीदने, बेचने या किराए पर लेने के लिए एक विज्ञापन पोस्ट कर सकते हैं या अपने प्रोफ़ाइल और कार्य अनुभव को पोस्ट कर सकते हैं यदि आप किसी क्षेत्र से संबंधित कार्य में शामिल होना चाहते हैं जिसे अन्य उपयोगकर्ताओं द्वारा देखा जा सकता है। आप इंट्रेस्टेड यूजर्स से भी संपर्क कर सकते हैं। दूसरे खंड में, उपयोगकर्ता पोस्ट लिखकर या वीडियो के विभिन्न लिंक प्रदान करके अपने ज्ञान को अन्य किसानों के साथ साझा कर सकते हैं जो किसानों को उनकी फसल उत्पादकता बढ़ाने में मदद कर सकते हैं।"
+        },
+        {
+            "title":"नवीनतम जानकारी  ",
+            "body":"किसानों और कृषि से संबंधित सभी वर्तमान और संशोधित सरकारी नीतियां प्रदान की जाती हैं। अधिक जानकारी के लिए लिंक प्रदान किए जाते हैं।"
+        },
+        {
+            "title":"",
+            "body":"आप अपनी सुविधा के आधार पर भाषा बदल सकते हैं।"
+        }
+
+  ],
+  "info":[
+             {
+                 "title":"Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+                 "description":"PMFBY is an actuarial premium based scheme under which farmer has to pay maximum premium of 2% for Kharif, 1.5% for Rabi food & oilseed crops and 5% for annual commercial/horticultural crops and remaining part of the actuarial/bidded premium is shared equally by the Centre and State Government.  One of the objectives of the scheme is to facilitate prompt claims settlement. The claims must be settled within two months of harvest subject to timely provision of both yield data and share of premium subsidy by the State Government.",
+                 "link":"https://www.shriramgi.com/PMFBY.html"
+     
+             },
+             {
+                 "title":"Pradhan Mantri Krishi Sinchai Yojana (PMKSY)",
+                 "description":"It was launched on 1st July, 2015 with the motto of ‘Har Khet Ko Paani’ for providing end-to end solutions in irrigation supply chain, viz. water sources, distribution network and farm level applications.<br/><br/>PMKSY not only focuses on creating sources for assured irrigation, but also creating protective irrigation by harnessing rain water at micro level through ‘Jal Sanchay’ and ‘Jal Sinchan’.<br/><br/>Micro irrigation is to be popularised to ensure ‘Per drop-More crop’. PMKSY adopts State level planning and projectised execution that allows States to draw up their own irrigation development based on District Irrigation Plans and State Irrigation Plans.",
+                 "link":"https://pmksy.gov.in/AboutPMKSY.aspx"
+     
+             },
+             {
+                 "title":"Paramparagat Krishi Vikas Yojana (PKVY)",
+                 "description":"It is implemented with a view to promote organic farming in the country. To improve soil health and organic matter content and increase net income of the farmer so as to realise premium prices.  Under this scheme, an area of 5 lakh acre is targeted to be covered though 10,000 clusters of 50 acre each, from the year 2015-16 to 2017-18. ",
+                 "link":"https://pgsindia-ncof.gov.in/pkvy/Introduction.aspx#"
+     
+             },
+             {
+                 "title":"National Agriculture Market (e-NAM) ",
+                 "description":"It provides e-marketing platform at national level and support creation of infrastructure to enable e-marketing.<br/>This innovative market process is revolutionizing agriculture markets by ensuring better price discovery. It brings in transparency and competition to enable farmers to get improved remuneration for their produce moving towards ‘One Nation One Market’.",
+                 "link":"http://sfacindia.com/Nam.aspx"
+     
+             },
+             {
+                 "title":" Micro Irrigation Fund (MIF) ",
+                 "description":"A dedicated MIF created with NABARD has been approved with an initial corpus of Rs. 5000 crore (Rs. 2000 crore for 2018-19 & Rs. 3000 crore for 2019-20) for encouraging public and private investments in Micro irrigation. The main objective of the fund is to facilitate the States in mobilizing the resources for expanding coverage of Micro Irrigation. <br/>MIF would not only facilitate States in incentivizing and mobilizing resources for achieving the target envisaged under PMKSY-PDMC but also in bringing additional coverage through special and innovative initiatives by State Governments.An Advisory Committee has been set up to provide policy direction and ensure effective planning, coordination and monitoring of the Micro Irrigation Fund.",
+                 "link":"https://www.indiafilings.com/learn/micro-irrigation-fund/"
+     
+             },
+             {
+                 "title":"National Mission for Sustainable Agriculture (NMSA)",
+                 "description":"NMSA is one of the eight Missions under National Action Plan on Climate Change (NAPCC). It aims at promoting Sustainable Agriculture through climate change adaptation measures, enhancing agriculture productivity especially in rainfed areas focusing on integrated farming, soil health management, and synergizing resource conservation.<br/>NMSA as a programmatic intervention caters to Mission Deliverables that focuses mainly on conservation agriculture to make farm sector more productive, sustainable, remunerative and climate resilient by promoting location specific integrated/composite farming systems.<br/><br/>Schemes under NMSA<br>-Rainfed Area Development (RAD): RAD is being implemented by RFS Division.<br>-Soil Health Management (SHM): SHM is being implemented by INM Division<br>-Sub Mission on Agro Forestry (SMAF): SMAF is being implemented by NRM Division<br>-Paramparagat Krishi Vikas Yojana (PKVY): PKVY is being implemented by INM Division<br>-Soil and Land Use Survey of India (SLUSI): Being implemented by RFS Division<br>-National Rainfed Area Authority (NRAA): Being implemented by RFS Division<br>-Mission Organic Value Chain Development in North Eastern Region (MOVCDNER): Being implemented by INM Division<br>-National Centre of Organic Farming (NCOF): Being implemented by INM Division<br>-Central Fertilizer Quality Control and Training Institute (CFQC&TI): implemented by INM Division",
+                 "link":"http://upagripardarshi.gov.in/MediaGallery/NMSA.pdf"
+     
+             },
+             {
+                 "title":"Livestock insurance Scheme",
+                 "description":"It aims to provide protection mechanism to the farmers and cattle rearers against any eventual loss of animals due to death. The scheme also demonstrates the benefit of the insurance of livestock to the people and popularizes it with the ultimate goal of attaining qualitative improvement in livestock and their products. ",
+                 "link":"http://dadf.gov.in/related-links/livestock-insurance"
+     
+             },
+             {
+                 "title":"Gramin Bhandaran Yojna",
+                 "description":"Objective of this Scheme:<br/>-Create scientific storage capacity with allied facilities in rural areas.<br/>-To meet the requirements of farmers for storing farm produce, processed farm produce and agricultural inputs.<br/>-Promotion of grading, standardization and quality control of agricultural produce to improve their marketability.<br/>-Prevent distress sale immediately after harvest by providing the facility of pledge financing and marketing credit by strengthening agricultural marketing infrastructure in the country.",
+                 "link":"https://www.bankbazaar.com/saving-schemes/gramin-bhandaran-yojana.html"
+     
+             },
+             {
+                 "title":"Soil Health Card Scheme",
+                 "description":"Launched in 2015, the scheme has been introduced to assist State Governments to issue Soil Health Cards to all farmers in the country.  The Soil Health Cards provide information to farmers on nutrient status of their soil along with recommendation on appropriate dosage of nutrients to be applied for improving soil health and its fertility. ",
+                 "link":"http://vikaspedia.in/agriculture/policies-and-schemes/crops-related/krishi-unnati-yojana/scheme-on-soil-health"
+     
+             }
+             
+
+         ]
+}
