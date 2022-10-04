@@ -33,8 +33,8 @@ updatedAt: string,
 })
 export class AdService implements OnInit {
   
-  url:string = "https://handy-man-api.herokuapp.com/"
-  // url:string = "http://localhost:8080/"
+  // url:string = "https://handy-man-api.herokuapp.com/"
+  url:string = "http://localhost:8080/"
   private _ads = new BehaviorSubject<adInterface[]>([])
   constructor(private http :HttpClient, private server : ServerService) { }
   ngOnInit(){
