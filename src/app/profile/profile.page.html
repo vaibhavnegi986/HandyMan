@@ -94,7 +94,7 @@
             <ion-item lines="none" *ngFor="let post of user.posts">
               <ion-thumbnail slot="start">
                 <ion-img *ngIf="post.post.imageUrl" [src]="ad.image"></ion-img>
-                <ion-img *ngIf="!post.post.imageUrl" src="../../assets/images/text.png"></ion-img>
+                <ion-img *ngIf="!post.post.imageUrl" src="assets/images/text.png"></ion-img>
               </ion-thumbnail>
               <ion-label>
                 <small>{{ post.post.createdAt | date:'medium'}}</small><ion-icon name="md-calendar" color="tertiary" slot="only"></ion-icon>
