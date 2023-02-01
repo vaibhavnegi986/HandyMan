@@ -17,8 +17,8 @@ export interface postInterface{
   providedIn: 'root'
 })
 export class PostService implements OnInit {
-  // url:string = 'https://handy-man-api.herokuapp.com/'
-  url:string = 'http://localhost:8080/'
+  url:string = 'https://handy-man-api.onrender.com/'
+  // url:string = 'http://localhost:8080/'
   _post=new BehaviorSubject<postInterface[]>([])
   constructor(private http:HttpClient,private server:ServerService) { }
   ngOnInit(){

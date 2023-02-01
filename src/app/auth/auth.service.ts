@@ -23,8 +23,8 @@ export interface userInterface{
 export class AuthService implements OnInit {
   isLogin: boolean 
   private _userId :string // = '5e14f08e61bf7353a8eabaec'
-  // url:string ="https://handy-man-api.herokuapp.com/"
-  url:string ="http://localhost:8080/"
+  url:string ="https://handy-man-api.onrender.com/"
+  // url:string ="http://localhost:8080/"
   constructor(private http: HttpClient,private router:Router,private server:ServerService) { }
   ngOnInit(){
     this.url=this.server.url
