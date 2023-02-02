@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguagePage } from './settings/language/language.page';
 import { LanguageComponent } from './shared/language/language.component';
 import { Capacitor, Plugins } from '@capacitor/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,13 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private translate: TranslateService,
-    private modalCtrl : ModalController
+    private modalCtrl : ModalController,
+    private authService: AuthService
   ) {
     this.initializeApp();
     translate.setDefaultLang('en');
+    let userId = localStorage.getItem( 'userId' );
+    this.authService.userId = userId ;
 
   }
 

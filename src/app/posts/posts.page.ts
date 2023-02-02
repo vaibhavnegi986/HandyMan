@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { PostService, postInterface } from '../image/post.service';
 import { Subscription } from 'rxjs';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-posts',
@@ -15,7 +16,7 @@ export class PostsPage implements OnInit ,OnDestroy{
   postSubsciption: Subscription
   error:boolean
 
-  constructor(private http: HttpClient, private translate: TranslateService, private postService: PostService) { }
+  constructor(private http: HttpClient, private translate: TranslateService, private postService: PostService,private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.postSubsciption = this.postService._post.subscribe((posts) => {
@@ -23,13 +24,21 @@ export class PostsPage implements OnInit ,OnDestroy{
     })
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
+    const loading = await this.loadingController.create({
+      message: 'Please Wait. This may take some time',
+      translucent: true,
+    });
+    await loading.present();
+
     this.isLoading = true
     this.postService.fetchPost().subscribe(() => {
       this.isLoading = false
+      loading.dismiss();
     },err=>{
       this.isLoading=false
       this.error=true
+      loading.dismiss();
     })
   }
 

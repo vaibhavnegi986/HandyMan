@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { AlertController } from '@ionic/angular';
 export class LoginComponent implements OnInit {
   form:FormGroup
 
-  constructor(private authService:AuthService,private router:Router,private alertCtrl:AlertController) { }
+  constructor(private authService:AuthService,private router:Router,private alertCtrl:AlertController, private loadingController: LoadingController) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -21,15 +21,24 @@ export class LoginComponent implements OnInit {
       password: new FormControl(null)
     })
   }
-  login(){
+  async login(){
     if(!this.form.valid){
       return;
     }
+    const loading = await this.loadingController.create({
+      message: 'Please Wait.',
+      translucent: true,
+    });
+    await loading.present();
+
     this.authService.register(this.form.get('name').value,this.form.get('phoneNo').value,this.form.get('password').value)
     .subscribe(()=>{
-      this.router.navigateByUrl("/tabs/ads")
+      this.router.navigateByUrl("/tabs/ads");
+      loading.dismiss();
     },err=>{
       console.log(err);
+      loading.dismiss();
+
       this.alertCtrl.create({
         header:'Error Occured',
         message:"Sign Up failed. Please try again later !",

@@ -86,7 +86,7 @@
           <ion-card-header id="light">
             <ion-item lines="none" no-padding>
               <ion-avatar slot="start">
-                <img [src]="post.profilePic" *ngIf="post.profilePic">
+                <img [src]="post.profilePic" onerror="this.src='assets/images/error.png';" *ngIf="post.profilePic">
                 <img src="assets/images/blank.png" *ngIf="!post.profilePic">
               </ion-avatar>
               <ion-label class="light">
@@ -98,7 +98,7 @@
             </ion-item>
           </ion-card-header>
           <ion-card-content no-padding>
-            <ion-img [src]="post.image"  (ionError)="post.image='/assets/images/error.png';"> </ion-img>
+            <ion-img [src]="post.image" (ionError)="post.image='assets/images/error.png';"> </ion-img>
             <ion-grid no-padding>
               <ion-row>
                 <ion-col size="12" no-padding>

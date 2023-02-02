@@ -69,7 +69,7 @@
             </ion-item>
             <ion-item lines="none" *ngFor="let ad of user.ads">
               <ion-avatar slot="start">
-                <ion-img [src]="ad.ad.imageUrl"></ion-img>
+                <ion-img [src]="ad.ad.imageUrl" (ionError)="ad.ad.imageUrl='assets/images/error.png';"></ion-img>
               </ion-avatar>
               <ion-label>
                 <small>{{ad.ad.createdAt| date:'medium' }}</small><ion-icon name="md-calendar" color="tertiary" slot="only"></ion-icon>
@@ -82,7 +82,7 @@
 
           </ion-list>
          
-        </ion-card>cli
+        </ion-card>
         <ion-card>
           <ion-list>
             <ion-list-header>
@@ -93,7 +93,7 @@
             </ion-item>
             <ion-item lines="none" *ngFor="let post of user.posts">
               <ion-thumbnail slot="start">
-                <ion-img *ngIf="post.post.imageUrl" [src]="ad.image"></ion-img>
+                <ion-img *ngIf="post.post.imageUrl" [src]="ad.image" (ionError)="ad.image='assets/images/error.png';"></ion-img>
                 <ion-img *ngIf="!post.post.imageUrl" src="assets/images/text.png"></ion-img>
               </ion-thumbnail>
               <ion-label>
