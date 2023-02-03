@@ -12,7 +12,7 @@ To access this application: [https://anirudhsingh20.github.io/HandyMan](https://
 -   Consumes a Node.js API for all data-related operations
 -   Skeleton loading for a better user experience
 
-## Authentication
+## Authentication and Authorization
 
 Access to the HandyMan API is secured using **JSON Web Tokens (JWT)**. The application handles authentication automatically and will request a new JWT if necessary. The user is only required to log in once, and the application will securely store the JWT for future use.
 
