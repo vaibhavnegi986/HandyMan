@@ -1,8 +1,8 @@
 # HandyMan
 
-**HandyMan** is a hybrid mobile application built using the **Ionic** framework and **Angular**. It is a **hobby project** that provides a simple and intuitive way for users to connect with local service providers for various home maintenance and repair tasks. The application consumes a **Node.js API** to perform all of its data-related operations.
+**HandyMan** is a hybrid mobile application built using the **Ionic** framework and **Angular**. It is a **hobby project** that provides a simple and intuitive way for users to connect with local service providers for various home maintenance and repair related tasks. The application consumes a **Node.js API** to perform all of its data-related operations.
 
-To access this application on [https://anirudhsingh20.github.io/HandyMan](https://anirudhsingh20.github.io/HandyMan)
+To access this application: [https://anirudhsingh20.github.io/HandyMan](https://anirudhsingh20.github.io/HandyMan)
 
 ## Key Features
 
