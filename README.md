@@ -23,8 +23,11 @@ The code for the HandyMan application is structured in a modular and scalable ma
 ## Scripts
 
 `npm install` // to install all the dependencies
+
 `npm start` // to run the application
+
 `npm run build` // to build and deploy project on github page
+
 `ng build --base-href '/HandyMan/' --prod` // for production build
 
 Note: Project was created using node v16.19.0
